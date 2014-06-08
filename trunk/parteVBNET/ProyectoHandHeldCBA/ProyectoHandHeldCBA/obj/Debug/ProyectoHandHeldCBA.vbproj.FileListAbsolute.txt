@@ -1,0 +1,13 @@
+C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\bin\Debug\ProyectoHandHeldCBA.exe
+C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\bin\Debug\ProyectoHandHeldCBA.pdb
+C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\bin\Debug\ProyectoHandHeldCBA.xml
+C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\obj\Debug\ProyectoHandHeldCBA.CambioUbicacion.resources
+C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\obj\Debug\ProyectoHandHeldCBA.Login.resources
+C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\obj\Debug\ProyectoHandHeldCBA.MenuPPal.resources
+C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\obj\Debug\ProyectoHandHeldCBA.Resources.resources
+C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\obj\Debug\ProyectoHandHeldCBA.TrasladarInfoApc.resources
+C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\obj\Debug\ProyectoHandHeldCBA.vbproj.GenerateResource.Cache
+C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\obj\Debug\ProyectoHandHeldCBA.exe
+C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\obj\Debug\ProyectoHandHeldCBA.xml
+C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\obj\Debug\ProyectoHandHeldCBA.pdb
