@@ -1,0 +1,1 @@
+type"NROENTRADA"key"enter"type"a011"key"enter"key"pf1"type"12"key"enter"

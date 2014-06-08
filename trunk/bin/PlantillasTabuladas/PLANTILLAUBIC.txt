@@ -1,0 +1,1 @@
+type"NROENTRADA"key"enter"key"enter"type"1P"key"tab"type"0701"key"enter"key"enter"key"enter"key"enter"type"UBICACION"key"enter"key"enter"appendtodisk "D:\ENTRADACAMBIO.txt,24/2,24/79"key"pf1"type"0601"key"enter"
