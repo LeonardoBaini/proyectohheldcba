@@ -32,6 +32,7 @@ Partial Public Class Login
         Me.datosPendientes = New System.Windows.Forms.Label
         Me.userLogueado = New System.Windows.Forms.Label
         Me.LabelhheldNro = New System.Windows.Forms.Label
+        Me.Label4 = New System.Windows.Forms.Label
         Me.SuspendLayout()
         '
         'textUsuario
@@ -87,15 +88,15 @@ Partial Public Class Login
         '
         Me.ButtonAceptar.Location = New System.Drawing.Point(131, 207)
         Me.ButtonAceptar.Name = "ButtonAceptar"
-        Me.ButtonAceptar.Size = New System.Drawing.Size(76, 31)
+        Me.ButtonAceptar.Size = New System.Drawing.Size(70, 31)
         Me.ButtonAceptar.TabIndex = 6
         Me.ButtonAceptar.Text = "Aceptar"
         '
         'salir
         '
-        Me.salir.Location = New System.Drawing.Point(39, 207)
+        Me.salir.Location = New System.Drawing.Point(42, 207)
         Me.salir.Name = "salir"
-        Me.salir.Size = New System.Drawing.Size(72, 31)
+        Me.salir.Size = New System.Drawing.Size(69, 31)
         Me.salir.TabIndex = 10
         Me.salir.Text = "Salir"
         '
@@ -126,6 +127,14 @@ Partial Public Class Login
         Me.LabelhheldNro.Name = "LabelhheldNro"
         Me.LabelhheldNro.Size = New System.Drawing.Size(63, 18)
         '
+        'Label4
+        '
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Location = New System.Drawing.Point(215, 276)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(25, 18)
+        Me.Label4.Text = "v2"
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -133,6 +142,7 @@ Partial Public Class Login
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(240, 294)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.LabelhheldNro)
         Me.Controls.Add(Me.userLogueado)
         Me.Controls.Add(Me.datosPendientes)
@@ -147,7 +157,7 @@ Partial Public Class Login
         Me.Controls.Add(Me.textUsuario)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Login"
-        Me.Text = "TFSA          "
+        Me.Text = "TFSA                          "
         Me.ResumeLayout(False)
 
     End Sub
@@ -163,5 +173,6 @@ Partial Public Class Login
     Friend WithEvents datosPendientes As System.Windows.Forms.Label
     Friend WithEvents userLogueado As System.Windows.Forms.Label
     Friend WithEvents LabelhheldNro As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 
 End Class

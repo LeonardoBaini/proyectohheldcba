@@ -29,38 +29,43 @@ Partial Public Class CambioUbicacion
         Me.TextUbicacion = New System.Windows.Forms.TextBox
         Me.aceptar = New System.Windows.Forms.Button
         Me.Retroceder = New System.Windows.Forms.Button
+        Me.Reimprimir = New System.Windows.Forms.CheckBox
+        Me.REIMPINFO = New System.Windows.Forms.Label
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'partNumber
         '
         Me.partNumber.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.partNumber.Location = New System.Drawing.Point(18, 35)
+        Me.partNumber.Location = New System.Drawing.Point(18, 33)
         Me.partNumber.Name = "partNumber"
-        Me.partNumber.Size = New System.Drawing.Size(211, 21)
+        Me.partNumber.Size = New System.Drawing.Size(211, 23)
         Me.partNumber.TabIndex = 0
         '
         'nroDisenio
         '
         Me.nroDisenio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.nroDisenio.Location = New System.Drawing.Point(18, 129)
+        Me.nroDisenio.Location = New System.Drawing.Point(18, 127)
         Me.nroDisenio.Name = "nroDisenio"
-        Me.nroDisenio.Size = New System.Drawing.Size(210, 21)
+        Me.nroDisenio.Size = New System.Drawing.Size(210, 23)
         Me.nroDisenio.TabIndex = 1
         '
         'nroEntrada
         '
         Me.nroEntrada.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.nroEntrada.Location = New System.Drawing.Point(17, 81)
+        Me.nroEntrada.Location = New System.Drawing.Point(17, 79)
         Me.nroEntrada.Name = "nroEntrada"
-        Me.nroEntrada.Size = New System.Drawing.Size(211, 21)
+        Me.nroEntrada.Size = New System.Drawing.Size(211, 23)
         Me.nroEntrada.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(20, 9)
+        Me.Label1.Location = New System.Drawing.Point(18, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(206, 23)
+        Me.Label1.Size = New System.Drawing.Size(86, 23)
         Me.Label1.Text = "Part Number"
         '
         'Label2
@@ -68,7 +73,7 @@ Partial Public Class CambioUbicacion
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.Location = New System.Drawing.Point(18, 105)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(211, 21)
+        Me.Label2.Size = New System.Drawing.Size(211, 19)
         Me.Label2.Text = "Nro De Diseño"
         '
         'Label3
@@ -76,7 +81,7 @@ Partial Public Class CambioUbicacion
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Label3.Location = New System.Drawing.Point(17, 59)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(210, 19)
+        Me.Label3.Size = New System.Drawing.Size(103, 19)
         Me.Label3.Text = "Nro de Entrada"
         '
         'Label4
@@ -92,14 +97,14 @@ Partial Public Class CambioUbicacion
         Me.TextUbicacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.TextUbicacion.Location = New System.Drawing.Point(18, 173)
         Me.TextUbicacion.Name = "TextUbicacion"
-        Me.TextUbicacion.Size = New System.Drawing.Size(211, 21)
+        Me.TextUbicacion.Size = New System.Drawing.Size(211, 23)
         Me.TextUbicacion.TabIndex = 11
         '
         'aceptar
         '
-        Me.aceptar.Location = New System.Drawing.Point(18, 210)
+        Me.aceptar.Location = New System.Drawing.Point(17, 207)
         Me.aceptar.Name = "aceptar"
-        Me.aceptar.Size = New System.Drawing.Size(211, 23)
+        Me.aceptar.Size = New System.Drawing.Size(86, 23)
         Me.aceptar.TabIndex = 12
         Me.aceptar.Text = "Aceptar"
         '
@@ -107,9 +112,42 @@ Partial Public Class CambioUbicacion
         '
         Me.Retroceder.Location = New System.Drawing.Point(18, 259)
         Me.Retroceder.Name = "Retroceder"
-        Me.Retroceder.Size = New System.Drawing.Size(211, 21)
+        Me.Retroceder.Size = New System.Drawing.Size(86, 21)
         Me.Retroceder.TabIndex = 13
         Me.Retroceder.Text = "Retroceder"
+        '
+        'Reimprimir
+        '
+        Me.Reimprimir.Location = New System.Drawing.Point(51, 34)
+        Me.Reimprimir.Name = "Reimprimir"
+        Me.Reimprimir.Size = New System.Drawing.Size(25, 20)
+        Me.Reimprimir.TabIndex = 18
+        '
+        'REIMPINFO
+        '
+        Me.REIMPINFO.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.REIMPINFO.Location = New System.Drawing.Point(17, 34)
+        Me.REIMPINFO.Name = "REIMPINFO"
+        Me.REIMPINFO.Size = New System.Drawing.Size(28, 19)
+        Me.REIMPINFO.Text = "NO"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.REIMPINFO)
+        Me.Panel1.Controls.Add(Me.Reimprimir)
+        Me.Panel1.Location = New System.Drawing.Point(125, 207)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(101, 73)
+        '
+        'Label5
+        '
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label5.Location = New System.Drawing.Point(3, 7)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(98, 16)
+        Me.Label5.Text = "REIMPRIMIR"
         '
         'CambioUbicacion
         '
@@ -118,6 +156,7 @@ Partial Public Class CambioUbicacion
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(240, 294)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Retroceder)
         Me.Controls.Add(Me.aceptar)
         Me.Controls.Add(Me.TextUbicacion)
@@ -131,6 +170,7 @@ Partial Public Class CambioUbicacion
         Me.KeyPreview = True
         Me.Name = "CambioUbicacion"
         Me.Text = "Cambio De Ubicación"
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -144,4 +184,8 @@ Partial Public Class CambioUbicacion
     Friend WithEvents TextUbicacion As System.Windows.Forms.TextBox
     Friend WithEvents aceptar As System.Windows.Forms.Button
     Friend WithEvents Retroceder As System.Windows.Forms.Button
+    Friend WithEvents Reimprimir As System.Windows.Forms.CheckBox
+    Friend WithEvents REIMPINFO As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class
