@@ -12,7 +12,63 @@
 
     End Sub
     
-   
+    Private Sub escribirArchivoConR()
+        Try
+            Dim exists As Boolean
+            exists = System.IO.Directory.Exists(".\LecturasPDA")
+            If exists = False Then
+                Try
+                    MessageBox.Show("Directorio .\LecturasPDA no existe pulse ok para crear.")
+                    System.IO.Directory.CreateDirectory(".\LecturasPDA")
+                    MessageBox.Show("Directorio .\LecturasPDA creado")
+                Catch ex As Exception
+
+                    MessageBox.Show(ex.Message + " Error no se puede crear el directorio!, reinicie la aplicación")
+                    Me.Close()
+
+                End Try
+            End If
+
+
+
+            'ejemplo 
+            'ESPACIOS  5       2             2                     3       8
+            'UBICACIÓN   ENTRADA NRO DISEÑO    PART NUMBER           NRO HHELD USUARIO
+            '2H51701     109980  005040626330  0504062633000092110   15        LBAINI
+            '2C21303     108683  005040626331  0504062633000092110   15        LBAINI
+            '2B21701     108575  005040626332  0504062633000092110   15        LBAINI
+            '2B52802     110022  005040626333  0504062633000092110   15        LBAINI
+            ' anda Const fic As String = "\\Laptop\PASE\CULECTURAS.txt"
+            Const fic As String = ".\LecturasPDA\CULECTURAS.txt"
+
+            Dim espacio5 As String = "  R  "
+            Dim espacio2 As String = "  "
+            Dim espacio3 As String = "   "
+            Dim espacio8 As String = "        "
+            Dim handHeld As String = Login.LabelhheldNro.Text
+            Dim usuario As String = Login.userLogueado.Text
+            Dim nroDis As String = nroDisenio.Text()
+            Dim partNmr As String = partNumber.Text()
+            Dim ubic As String = TextUbicacion.Text()
+            Dim numEntrada = nroEntrada.Text()
+
+            Dim sw As New System.IO.StreamWriter(fic, True)
+            sw.WriteLine(ubic + espacio5 + numEntrada + espacio2 + nroDis + espacio2 + partNmr + espacio3 + handHeld + espacio8 + usuario)
+            sw.Close()
+            MessageBox.Show("Guardado ok con R!")
+
+
+        Catch ex As Exception
+
+            MessageBox.Show(ex.Message + " Error el dato no se guardó!, reinicie la aplicación")
+            Me.Close()
+
+
+        End Try
+
+
+    End Sub
+
     Private Sub escribirArchivo()
         Try
             Dim exists As Boolean
@@ -56,7 +112,7 @@
             Dim sw As New System.IO.StreamWriter(fic, True)
             sw.WriteLine(ubic + espacio5 + numEntrada + espacio2 + nroDis + espacio2 + partNmr + espacio3 + handHeld + espacio8 + usuario)
             sw.Close()
-            MessageBox.Show("Guardado ok!")
+            MessageBox.Show("Guardado ok sin R!")
 
 
         Catch ex As Exception
@@ -139,9 +195,17 @@
 
 
             If controlarIgualdadPartNumberDisenio() = True Then
-                escribirArchivo()
-                limpiarCampos()
 
+                If Reimprimir.Checked = True Then
+                    escribirArchivoConR()
+                    limpiarCampos()
+
+                ElseIf Reimprimir.Checked = False Then
+
+                    escribirArchivo()
+                    limpiarCampos()
+                End If
+              
 
 
             Else
@@ -307,12 +371,22 @@
     End Sub
 
     Private Sub aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles aceptar.Click
+
         guardar()
         partNumber.Focus()
+
+        
     End Sub
 
    
    
     
     
+    Private Sub Reimprimir_CheckStateChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Reimprimir.CheckStateChanged
+        If Reimprimir.Checked = True Then
+            REIMPINFO.Text = "SI"
+        Else
+            REIMPINFO.Text = "NO"
+        End If
+    End Sub
 End Class

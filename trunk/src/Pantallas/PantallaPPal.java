@@ -67,7 +67,7 @@ public class PantallaPPal extends JFrame {
 		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagenes/LogoFurlongHHeld.png")));
 		this.setJMenuBar(getJJMenuBar());
 		this.setContentPane(getJContentPane());
-		this.setTitle("Transportes Furlong                                                      TFHHELD PARA PC  v.1");
+		this.setTitle("Transportes Furlong                                           TFHHELD PARA PC  v.2");
 	}
 
 	/**
@@ -137,12 +137,16 @@ public class PantallaPPal extends JFrame {
 	}
 
 	/**
-	 * This method initializes jMenuItemBajarDatos	
+	 * Copia de TEMPBAJADAS al resto de los directorios.	
+	 * C:\\TFHHELD\\BAJADAS\\
+	 * C:\\TFHHELD\\HISTORIALBAJADAS\\
+	 * C:\\TFHHELD\\PROVISORIO\\
 	 * 	
 	 * @return javax.swing.JMenuItem	
 	 */
 	
-	private void bajarDatos(){
+	private boolean bajarDatos(){
+		boolean ok=false;
 		String ultimoUsuario;
 		LeerArchivo l=new LeerArchivo();
 		ultimoUsuario=l.ultimoUsuario("C:\\TFHHELD\\TEMPBAJADAS\\CULECTURAS.txt");
@@ -180,17 +184,18 @@ public class PantallaPPal extends JFrame {
 				jButtonProvisorio.setBackground(colorDefault);
 				
 				jButtonHistBajadas.setBackground(colorDefault);
-				
+				ok=true;
 				
 			} catch (IOException e1) {
 			
 				JOptionPane.showMessageDialog(null,"ERROR "+e1.getMessage());
+				ok=false;
 			}
 		}else{
 			JOptionPane.showMessageDialog(null,"Imposible transferir, proceso GMAP pendiente directorios BAJADAS Y PROVISORIO CONTIENEN DATOS.");
-			
+			ok=false;
 		}
-		
+		return ok;
 	
 	}
 	private JMenuItem getJMenuItemSalir() {
@@ -301,12 +306,14 @@ public class PantallaPPal extends JFrame {
 	}
 	
 	private String generarCUGMAPRE(String plantillaReimp,String lineaCUWKFILE01){
+		String auxPlantillaReimp=null;
 		// type"NROENTRADA"key"enter"type"a011"key"enter"key"pf1"type"12"key"enter"
 		//ubic    //entrada //dis         //pn                  hheld     usr
 		//J20102     107062  005040626330  0504062633000092110   12        usuario
 	//	type"NROENTRADA"key"enter"key"enter"type"1P"key"tab"type"0701"key"enter"key"enter"key"enter"key"enter"type"UBICACION"key"enter"key"enter"appendtodisk "D:\ENTRADACAMBIO.txt,24/2,24/79"key"pf1"type"0601"key"enter"
-		String auxPlantillaReimp=plantillaReimp.replaceAll("NROENTRADA", lineaCUWKFILE01.substring(11, 17));//11 a 16
-		
+		if(lineaCUWKFILE01.substring(8, 9).equals("R")){
+		auxPlantillaReimp=plantillaReimp.replaceAll("NROENTRADA", lineaCUWKFILE01.substring(11, 17));//11 a 16
+		}
 		
 		
 		return auxPlantillaReimp;
@@ -325,13 +332,18 @@ public class PantallaPPal extends JFrame {
 			jMenuItemGenerarGmapDefinitivo
 					.addActionListener(new java.awt.event.ActionListener() {
 						public void actionPerformed(java.awt.event.ActionEvent e) {
+							boolean datosBajadosOK=false;
 							InicializadorDirectorios ini=new InicializadorDirectorios();
-							if (ini.existeFichero("C:\\TFHHELD\\DEFINITIVO\\CUGMAPCU.txt")==false && ini.existeFichero("C:\\TFHHELD\\DEFINITIVO\\CUGMAPRE.txt.txt")==false){
+							if (ini.existeFichero("C:\\TFHHELD\\DEFINITIVO\\CUGMAPCU.txt")==false && ini.existeFichero("C:\\TFHHELD\\DEFINITIVO\\CUGMAPRE.txt")==false){
 							
 								if (ini.existeFichero("C:\\TFHHELD\\TEMPBAJADAS\\CULECTURAS.txt")==true){
+									datosBajadosOK=bajarDatos(); 
+							if(datosBajadosOK){
 							
 							try{
-							bajarDatos(); 
+							
+							
+							
 							
 							String lineaPlantillaUBIC=null;
 							String lineaPLantillaREIMP=null;
@@ -345,11 +357,13 @@ public class PantallaPPal extends JFrame {
 							provisorio=CUWKFILE01.leer("C:\\TFHHELD\\PROVISORIO\\CUWKFILE01.txt");
 							lineaPLantillaREIMP=PLANTILLAREIMP.leer("C:\\TFHHELD\\PLANTILLASTABULADAS\\PLANTILLAREIMP.txt").get(0);
 							lineaPlantillaUBIC=PLANTILLAUBIC.leer("C:\\TFHHELD\\PLANTILLASTABULADAS\\PLANTILLAUBIC.txt").get(0);
-							
+							String AuxGenerarCUMAPRE=null;
 							
 							for(int i=0;i<provisorio.size();i++){
 							reubicaciones.add(generarCUGMAPCU(lineaPlantillaUBIC,provisorio.get(i)));
-							reimpresiones.add(generarCUGMAPRE(lineaPLantillaREIMP, provisorio.get(i)));
+							AuxGenerarCUMAPRE=generarCUGMAPRE(lineaPLantillaREIMP, provisorio.get(i));
+							if(AuxGenerarCUMAPRE!=null)
+							reimpresiones.add(AuxGenerarCUMAPRE);
 							}							
 							
 							escritor.escribir("C:\\TFHHELD\\DEFINITIVO\\CUGMAPCU.txt", reubicaciones);
@@ -362,7 +376,7 @@ public class PantallaPPal extends JFrame {
 							int lineasCUGMAPRE=CUGMAPRE.contarLineas("C:\\TFHHELD\\DEFINITIVO\\CUGMAPRE.txt");;
 							int lineasPROVISORIO=provisorio.size();
 							
-							if(lineasCUGMAPCU==lineasCUGMAPRE && lineasCUGMAPRE==lineasPROVISORIO){	
+							if(lineasCUGMAPCU==lineasPROVISORIO){	
 								Color colorDefault=jButtonDefinitivo.getBackground();
 								jButtonDefinitivo.setBackground(Color.GREEN);
 							JOptionPane.showMessageDialog(null,"Los archivos\n" +
@@ -371,7 +385,8 @@ public class PantallaPPal extends JFrame {
 									                           "\nlineas CUGMAPCU.txt="+lineasCUGMAPCU+
 									                           "\nlineas CUGMAPRE.txt="+lineasCUGMAPRE+
 									                           "\nlineas WKFILE01.txt= "+lineasPROVISORIO+
-									                           "\n****CORTE LOS ARCHIVOS GENERADOS Y PÉGUELOS EN SU CARPETA DE PROCESO HABITUAL****" );
+									                           "\n****CORTE LOS ARCHIVOS GENERADOS Y PÉGUELOS EN SU CARPETA DE PROCESO HABITUAL****" +
+									                           "\n\nLAS LINEAS DE \"CUGMAPRE.txt\" PUEDEN SER MENOS, PUES NO TODAS SE REIMPRIMEN." );
 							
 							ini.borrarFichero("C:\\TFHHELD\\TEMPBAJADAS\\CULECTURAS.txt");
 							
@@ -385,12 +400,12 @@ public class PantallaPPal extends JFrame {
 							
 							ini.abrirDirectorio("C:\\TFHHELD\\DEFINITIVO");
 							jButtonDefinitivo.setBackground(colorDefault);
+							
 							}else{
 								JOptionPane.showMessageDialog(null,"Los archivos\n" +
 										   " C:\\TFHHELD\\DEFINITIVO\\CUGMAPCU.txt\ny\n" +
 				                           " C:\\TFHHELD\\DEFINITIVO\\CUGMAPRE.txt\nNO COINCIDEN EN TAMAÑO VERIFIQUELOS!\n" +
 				                           "\nlineas CUGMAPCU.txt="+lineasCUGMAPCU+
-				                           "\nlineas CUGMAPRE.txt="+lineasCUGMAPRE+
 				                           "\nlineas WKFILE01.txt= "+lineasPROVISORIO);
 								
 								ini.abrirDirectorio("C:\\TFHHELD\\DEFINITIVO");								
@@ -401,6 +416,9 @@ public class PantallaPPal extends JFrame {
 							}catch(Exception ex){
 								JOptionPane.showMessageDialog(null,"Se produjo un error "+ex.getMessage());
 								
+							}
+							}else{//fin si no se bajó ok
+								JOptionPane.showMessageDialog(null, "No se puede bajar de TEMPBAJADAS"); 
 							}
 								}else{
 									JOptionPane.showMessageDialog(null,"NO HAY ARCHIVO 'CULECTURAS.txt' EN C:\\TFHHELD\\TEMPBAJADAS PARA PROCESAR,\n BAJE UNO DE LA HAND HELD USANDO LA OPCIÓN 'BAJAR A PC'");	
