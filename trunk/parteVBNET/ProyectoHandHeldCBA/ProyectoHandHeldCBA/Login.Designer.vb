@@ -133,7 +133,7 @@ Partial Public Class Login
         Me.Label4.Location = New System.Drawing.Point(215, 276)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(25, 18)
-        Me.Label4.Text = "v2"
+        Me.Label4.Text = "v3"
         '
         'Login
         '

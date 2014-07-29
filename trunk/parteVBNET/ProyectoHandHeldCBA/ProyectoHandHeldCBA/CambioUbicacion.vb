@@ -1,8 +1,6 @@
 ﻿Public Class CambioUbicacion
 
-    Private Sub Label1_ParentChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.ParentChanged
-
-    End Sub
+    
 
     
 
@@ -11,7 +9,7 @@
         Me.Hide()
 
     End Sub
-    
+
     Private Sub escribirArchivoConR()
         Try
             Dim exists As Boolean
@@ -185,9 +183,9 @@
         End If
 
     End Function
-    
 
-  
+
+
     Private Sub guardar()
 
         If hayCamposVacios() = False Then
@@ -197,15 +195,26 @@
             If controlarIgualdadPartNumberDisenio() = True Then
 
                 If Reimprimir.Checked = True Then
-                    escribirArchivoConR()
-                    limpiarCampos()
+                    If (verCoherencias() = True) Then
+                        escribirArchivoConR()
+                        limpiarCampos()
+                    Else
+
+                    End If
+
 
                 ElseIf Reimprimir.Checked = False Then
 
-                    escribirArchivo()
-                    limpiarCampos()
-                End If
-              
+                    If (verCoherencias() = True) Then
+                        escribirArchivo()
+                        limpiarCampos()
+                    Else
+
+                    End If
+
+
+                    End If
+
 
 
             Else
@@ -225,12 +234,17 @@
         End If
 
 
-        
+
     End Sub
 
-    
-  
-    
+    Private Sub campoEnRojo(ByVal CampoText As TextBox)
+
+        CampoText.BackColor = Color.Red
+
+
+    End Sub
+
+
 
     Private Sub limpiarCampos()
         nroDisenio.Text = ""
@@ -246,7 +260,7 @@
 
     End Sub
 
-    
+
 
     Private Function controlarTamanioCampo(ByVal CampoText As TextBox, ByVal tamanioCampoEsperado As Integer) As Boolean
         If CampoText.TextLength() > 0 Then
@@ -264,7 +278,7 @@
                 Return False
 
             End If
-       
+
 
 
         End If
@@ -281,8 +295,8 @@
         End If
 
     End Sub
-   
-    
+
+
     Private Sub partNumber_LostFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles partNumber.LostFocus
 
         controlarTamanioCampo(partNumber, 19)
@@ -310,7 +324,7 @@
     End Sub
     Private Sub nroEntrada_LostFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nroEntrada.LostFocus
         controlarTamanioCampo(nroEntrada, 6)
-        
+
 
     End Sub
     Private Sub nroEntrada_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nroEntrada.TextChanged
@@ -331,7 +345,7 @@
 
 
         End If
-       
+
     End Sub
 
     Private Sub nroDisenio_LostFocus_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nroDisenio.LostFocus
@@ -375,13 +389,13 @@
         guardar()
         partNumber.Focus()
 
-        
+
     End Sub
 
-   
-   
-    
-    
+
+
+
+
     Private Sub Reimprimir_CheckStateChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Reimprimir.CheckStateChanged
         If Reimprimir.Checked = True Then
             REIMPINFO.Text = "SI"
@@ -389,4 +403,75 @@
             REIMPINFO.Text = "NO"
         End If
     End Sub
+    Private Function verCoherencias() As Boolean
+        Try
+            Dim largoDisenio As Integer
+            Dim largoPartNumber As Integer
+            Dim largoEntrada As Integer
+
+            largoDisenio = nroDisenio.TextLength
+            largoPartNumber = partNumber.TextLength
+            largoEntrada = nroEntrada.TextLength
+
+            If (largoDisenio > 5 And largoPartNumber > 5 And largoEntrada > 5) Then
+                'si el largo es mayor a 5 , es decir, 6 o más
+                Dim disF6 As String
+                Dim partF6 As String
+                Dim nroF6 As String
+
+
+                disF6 = nroDisenio.Text().Substring(0, 6)
+                partF6 = partNumber.Text().Substring(0, 6)
+                nroF6 = nroEntrada.Text().Substring(0, 6)
+
+                If (disF6 <> partF6 And partF6 <> nroF6 And nroF6 <> disF6) Then
+                    ' Lógica dado a,b,c si a != b y b!=c y c!=a ,no hay iguales entre si
+
+                    Return True
+
+                Else
+                    MessageBox.Show("Error, tipeo 2 veces el mismo campo")
+
+                    Select Case True
+
+
+                        Case disF6 = nroF6
+                            campoEnRojo(nroDisenio)
+                            campoEnRojo(nroEntrada)
+
+                        Case partF6 = disF6
+                            campoEnRojo(partNumber)
+                            campoEnRojo(nroDisenio)
+
+                        Case nroF6 = partF6
+                            campoEnRojo(partNumber)
+                            campoEnRojo(nroEntrada)
+
+
+                    End Select
+
+
+                    Return False
+
+                End If
+
+                MessageBox.Show("Error, Hay un campo de largo menor a 6 ")
+                Return False
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error " + ex.Message)
+            Return False
+
+        End Try
+
+
+
+
+    End Function
+
+
+
+
+
 End Class

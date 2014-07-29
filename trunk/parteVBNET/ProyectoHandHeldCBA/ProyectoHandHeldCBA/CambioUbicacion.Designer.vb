@@ -41,7 +41,7 @@ Partial Public Class CambioUbicacion
         Me.partNumber.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.partNumber.Location = New System.Drawing.Point(18, 33)
         Me.partNumber.Name = "partNumber"
-        Me.partNumber.Size = New System.Drawing.Size(211, 23)
+        Me.partNumber.Size = New System.Drawing.Size(211, 21)
         Me.partNumber.TabIndex = 0
         '
         'nroDisenio
@@ -49,7 +49,7 @@ Partial Public Class CambioUbicacion
         Me.nroDisenio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.nroDisenio.Location = New System.Drawing.Point(18, 127)
         Me.nroDisenio.Name = "nroDisenio"
-        Me.nroDisenio.Size = New System.Drawing.Size(210, 23)
+        Me.nroDisenio.Size = New System.Drawing.Size(210, 21)
         Me.nroDisenio.TabIndex = 1
         '
         'nroEntrada
@@ -57,7 +57,7 @@ Partial Public Class CambioUbicacion
         Me.nroEntrada.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.nroEntrada.Location = New System.Drawing.Point(17, 79)
         Me.nroEntrada.Name = "nroEntrada"
-        Me.nroEntrada.Size = New System.Drawing.Size(211, 23)
+        Me.nroEntrada.Size = New System.Drawing.Size(211, 21)
         Me.nroEntrada.TabIndex = 2
         '
         'Label1
@@ -97,7 +97,7 @@ Partial Public Class CambioUbicacion
         Me.TextUbicacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.TextUbicacion.Location = New System.Drawing.Point(18, 173)
         Me.TextUbicacion.Name = "TextUbicacion"
-        Me.TextUbicacion.Size = New System.Drawing.Size(211, 23)
+        Me.TextUbicacion.Size = New System.Drawing.Size(211, 21)
         Me.TextUbicacion.TabIndex = 11
         '
         'aceptar
