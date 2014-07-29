@@ -67,7 +67,7 @@ public class PantallaPPal extends JFrame {
 		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagenes/LogoFurlongHHeld.png")));
 		this.setJMenuBar(getJJMenuBar());
 		this.setContentPane(getJContentPane());
-		this.setTitle("Transportes Furlong                                           TFHHELD PARA PC  v.2");
+		this.setTitle("Transportes Furlong                                           TFHHELD PARA PC  v.3");
 	}
 
 	/**
