@@ -22,7 +22,7 @@
 
         If System.IO.File.Exists(".\LecturasPDA\CULECTURAS.txt") = True Then
 
-            Login.datosPendientes.Text = "Hay datos pendientes de proceso."
+            Login.datosPendientes.Text = "Hay datos pendientes."
 
         Else
             Login.datosPendientes.Text = "No hay datos pendientes."
@@ -37,5 +37,11 @@
     Private Sub ButtonBajaraPc_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonBajaraPc.Click
         TrasladarInfoApc.Show()
 
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim tomaInventario As TomaInventario
+        tomaInventario = New TomaInventario()
+        tomaInventario.Show()
     End Sub
 End Class

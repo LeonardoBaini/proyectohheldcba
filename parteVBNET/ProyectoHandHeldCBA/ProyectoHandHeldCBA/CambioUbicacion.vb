@@ -49,9 +49,10 @@
             Dim partNmr As String = partNumber.Text()
             Dim ubic As String = TextUbicacion.Text()
             Dim numEntrada = nroEntrada.Text()
+            Dim horaNecesaria = Now.ToString("HH:mm")
 
             Dim sw As New System.IO.StreamWriter(fic, True)
-            sw.WriteLine(ubic + espacio5 + numEntrada + espacio2 + nroDis + espacio2 + partNmr + espacio3 + handHeld + espacio8 + usuario)
+            sw.WriteLine(ubic + espacio5 + numEntrada + espacio2 + nroDis + espacio2 + partNmr + espacio3 + handHeld + espacio8 + usuario + espacio2 + horaNecesaria)
             sw.Close()
             MessageBox.Show("Guardado ok con R!")
 
@@ -106,9 +107,10 @@
             Dim partNmr As String = partNumber.Text()
             Dim ubic As String = TextUbicacion.Text()
             Dim numEntrada = nroEntrada.Text()
+            Dim horaNecesaria = Now.ToString("HH:mm")
 
             Dim sw As New System.IO.StreamWriter(fic, True)
-            sw.WriteLine(ubic + espacio5 + numEntrada + espacio2 + nroDis + espacio2 + partNmr + espacio3 + handHeld + espacio8 + usuario)
+            sw.WriteLine(ubic + espacio5 + numEntrada + espacio2 + nroDis + espacio2 + partNmr + espacio3 + handHeld + espacio8 + usuario + espacio2 + horaNecesaria)
             sw.Close()
             MessageBox.Show("Guardado ok sin R!")
 

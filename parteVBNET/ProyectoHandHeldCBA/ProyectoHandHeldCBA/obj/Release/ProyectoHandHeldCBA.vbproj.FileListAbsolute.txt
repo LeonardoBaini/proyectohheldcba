@@ -12,3 +12,5 @@ C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoH
 C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\bin\Release\ProyectoHandHeldCBA.pdb
 C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\bin\Release\ProyectoHandHeldCBA.xml
 C:\Users\Leo\Documents\Visual Studio 2008\Projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\obj\Release\ProyectoHandHeldCBA.InicializarUsuarios.resources
+C:\Users\Leo\Documents\visual studio 2008\projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\obj\Release\ProyectoHandHeldCBA.TomaInventario.resources
+C:\Users\Leo\Documents\visual studio 2008\projects\ProyectoHandHeldCBA\ProyectoHandHeldCBA\obj\Release\ProyectoHandHeldCBA.Splash.resources

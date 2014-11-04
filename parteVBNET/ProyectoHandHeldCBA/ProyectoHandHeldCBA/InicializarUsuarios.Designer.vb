@@ -19,6 +19,7 @@ Partial Public Class InicializarUsuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InicializarUsuarios))
         Me.NombrePC = New System.Windows.Forms.TextBox
         Me.NombreCarpeta = New System.Windows.Forms.TextBox
         Me.ruta = New System.Windows.Forms.TextBox
@@ -26,6 +27,7 @@ Partial Public Class InicializarUsuarios
         Me.Volver = New System.Windows.Forms.Button
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.SuspendLayout()
         '
         'NombrePC
@@ -83,6 +85,13 @@ Partial Public Class InicializarUsuarios
         Me.Label2.Size = New System.Drawing.Size(155, 14)
         Me.Label2.Text = "CARPETA DE USUARIOS"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(29, 38)
+        '
         'InicializarUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -90,6 +99,7 @@ Partial Public Class InicializarUsuarios
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(240, 294)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Volver)
@@ -109,4 +119,5 @@ Partial Public Class InicializarUsuarios
     Friend WithEvents Volver As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

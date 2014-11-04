@@ -29,10 +29,12 @@ Partial Public Class Login
         Me.ButtonAceptar = New System.Windows.Forms.Button
         Me.salir = New System.Windows.Forms.Button
         Me.InicializarUsuarios = New System.Windows.Forms.Button
-        Me.datosPendientes = New System.Windows.Forms.Label
         Me.userLogueado = New System.Windows.Forms.Label
         Me.LabelhheldNro = New System.Windows.Forms.Label
+        Me.datosPendientes = New System.Windows.Forms.Label
+        Me.Panel1 = New System.Windows.Forms.Panel
         Me.Label4 = New System.Windows.Forms.Label
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'textUsuario
@@ -86,34 +88,28 @@ Partial Public Class Login
         '
         'ButtonAceptar
         '
-        Me.ButtonAceptar.Location = New System.Drawing.Point(131, 207)
+        Me.ButtonAceptar.Location = New System.Drawing.Point(95, 3)
         Me.ButtonAceptar.Name = "ButtonAceptar"
-        Me.ButtonAceptar.Size = New System.Drawing.Size(70, 31)
+        Me.ButtonAceptar.Size = New System.Drawing.Size(70, 22)
         Me.ButtonAceptar.TabIndex = 6
         Me.ButtonAceptar.Text = "Aceptar"
         '
         'salir
         '
-        Me.salir.Location = New System.Drawing.Point(42, 207)
+        Me.salir.Location = New System.Drawing.Point(3, 3)
         Me.salir.Name = "salir"
-        Me.salir.Size = New System.Drawing.Size(69, 31)
+        Me.salir.Size = New System.Drawing.Size(69, 22)
         Me.salir.TabIndex = 10
+        Me.salir.Tag = ""
         Me.salir.Text = "Salir"
         '
         'InicializarUsuarios
         '
-        Me.InicializarUsuarios.Location = New System.Drawing.Point(42, 244)
+        Me.InicializarUsuarios.Location = New System.Drawing.Point(3, 31)
         Me.InicializarUsuarios.Name = "InicializarUsuarios"
-        Me.InicializarUsuarios.Size = New System.Drawing.Size(159, 33)
+        Me.InicializarUsuarios.Size = New System.Drawing.Size(162, 21)
         Me.InicializarUsuarios.TabIndex = 14
         Me.InicializarUsuarios.Text = "Inicializar usuarios"
-        '
-        'datosPendientes
-        '
-        Me.datosPendientes.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.datosPendientes.Location = New System.Drawing.Point(10, 4)
-        Me.datosPendientes.Name = "datosPendientes"
-        Me.datosPendientes.Size = New System.Drawing.Size(219, 19)
         '
         'userLogueado
         '
@@ -127,13 +123,30 @@ Partial Public Class Login
         Me.LabelhheldNro.Name = "LabelhheldNro"
         Me.LabelhheldNro.Size = New System.Drawing.Size(63, 18)
         '
+        'datosPendientes
+        '
+        Me.datosPendientes.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.datosPendientes.Location = New System.Drawing.Point(39, 4)
+        Me.datosPendientes.Name = "datosPendientes"
+        Me.datosPendientes.Size = New System.Drawing.Size(183, 19)
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.ButtonAceptar)
+        Me.Panel1.Controls.Add(Me.salir)
+        Me.Panel1.Controls.Add(Me.InicializarUsuarios)
+        Me.Panel1.Location = New System.Drawing.Point(39, 198)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(171, 58)
+        '
         'Label4
         '
-        Me.Label4.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(215, 276)
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Location = New System.Drawing.Point(206, 276)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(25, 18)
-        Me.Label4.Text = "v3"
+        Me.Label4.Size = New System.Drawing.Size(31, 18)
+        Me.Label4.Text = "V 4"
         '
         'Login
         '
@@ -143,12 +156,10 @@ Partial Public Class Login
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(240, 294)
         Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.LabelhheldNro)
         Me.Controls.Add(Me.userLogueado)
         Me.Controls.Add(Me.datosPendientes)
-        Me.Controls.Add(Me.InicializarUsuarios)
-        Me.Controls.Add(Me.salir)
-        Me.Controls.Add(Me.ButtonAceptar)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -158,6 +169,7 @@ Partial Public Class Login
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Login"
         Me.Text = "TFSA                          "
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -170,9 +182,10 @@ Partial Public Class Login
     Friend WithEvents ButtonAceptar As System.Windows.Forms.Button
     Friend WithEvents salir As System.Windows.Forms.Button
     Friend WithEvents InicializarUsuarios As System.Windows.Forms.Button
-    Friend WithEvents datosPendientes As System.Windows.Forms.Label
     Friend WithEvents userLogueado As System.Windows.Forms.Label
     Friend WithEvents LabelhheldNro As System.Windows.Forms.Label
+    Friend WithEvents datosPendientes As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label4 As System.Windows.Forms.Label
 
 End Class

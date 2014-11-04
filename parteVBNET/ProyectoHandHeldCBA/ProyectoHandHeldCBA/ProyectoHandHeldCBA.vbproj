@@ -83,6 +83,12 @@
     <Compile Include="CambioUbicacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InicializarUsuarios.Designer.vb">
       <DependentUpon>InicializarUsuarios.vb</DependentUpon>
     </Compile>
@@ -108,6 +114,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TomaInventario.Designer.vb">
+      <DependentUpon>TomaInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TomaInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TrasladarInfoApc.Designer.vb">
       <DependentUpon>TrasladarInfoApc.vb</DependentUpon>
     </Compile>
@@ -118,6 +130,10 @@
   <ItemGroup>
     <EmbeddedResource Include="CambioUbicacion.resx">
       <DependentUpon>CambioUbicacion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="InicializarUsuarios.resx">
@@ -138,6 +154,10 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TomaInventario.resx">
+      <DependentUpon>TomaInventario.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="TrasladarInfoApc.resx">
       <DependentUpon>TrasladarInfoApc.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -145,6 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pda.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.VisualBasic.targets" />
   <ProjectExtensions>
