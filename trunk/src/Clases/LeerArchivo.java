@@ -31,13 +31,18 @@ public class LeerArchivo  {
 	}
 
 	public String ultimoUsuario(String rutaAlArchivo){
+		String ultimoUsr=null;
 		ArrayList<String> lista=leer(rutaAlArchivo);
 		int ultimoRegistro=lista.size()-1;
-		String ultimoUsr=lista.get(ultimoRegistro).substring(65, lista.get(ultimoRegistro).length());
+		String subUltimoUsr=lista.get(ultimoRegistro).substring(65, lista.get(ultimoRegistro).length());
+		ultimoUsr=subUltimoUsr.substring(0,subUltimoUsr.lastIndexOf("  ")); // el último indice con 2 espacios
 		return ultimoUsr;
 		
 	}
-	
+	/**
+	 * 
+	 * Toma la ruta a un archivo y devuelve las lines leidas en forma de ArrayList
+	 */
    public ArrayList<String> leer(String rutaAlArchivo){
 	   ArrayList<String> lista=new ArrayList<String>();
 	   //rutaAlArchivo=rutaAlArchivo.replaceAll("\\\\", "\\");
