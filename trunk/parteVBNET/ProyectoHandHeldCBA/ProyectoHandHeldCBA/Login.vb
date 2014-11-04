@@ -1,10 +1,18 @@
 ﻿Imports System.IO
+Imports System.ComponentModel
 
 Public Class Login
   
 
 
     Private Sub Login_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        ' Me.Visible = False
+
+        ' Dim splash As New Splash
+        ' splash.ShowDialog()
+        ' splash.Timer1.Enabled = False
+
+        ' Me.Visible = True
 
 
         Dim exists As Boolean
@@ -22,7 +30,7 @@ Public Class Login
 
         End If
 
-        If System.IO.File.Exists(".\LecturasPDA\CULECTURAS.txt") = True Then
+        If System.IO.File.Exists(".\LecturasPDA\CULECTURAS.txt") = True Or System.IO.File.Exists(".\LecturasPDA\CUTOMINVEN.txt") = True Then
 
             datosPendientes.Text = "HAY DATOS PENDIENTES!!!."
 
@@ -34,54 +42,68 @@ Public Class Login
     End Sub
 
     Private Sub ButtonAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonAceptar.Click
-        Dim exists As Boolean
-        exists = System.IO.File.Exists(".\usrs\USRS.TXT")
 
-        If exists = True Then
+        If textUsuario.Text.Equals("administrador") And textContrasenia.Text.Equals("coinse") Then
+            textNroHandHeld.Text = "1"
+            userLogueado.Text = textUsuario.Text
+            LabelhheldNro.Text = textNroHandHeld.Text
+            MessageBox.Show("Bienvenido " + textUsuario.Text)
 
+            MenuPPal.Show()
+        Else
+            Dim exists As Boolean
 
+            exists = System.IO.File.Exists(".\usrs\USRS.TXT")
 
-            If textUsuario.TextLength = 0 Or textContrasenia.TextLength = 0 Or textNroHandHeld.TextLength = 0 Then
-
-                MessageBox.Show("No se permiten campos vacíos, por favor complételos.")
-
-            Else
-                If textNroHandHeld.TextLength > 0 And textNroHandHeld.TextLength < 3 Then
-
-
-
-
-                    If compararUsuarioValido(textUsuario.Text, textContrasenia.Text) = True Then
-                        MessageBox.Show("Bienvenido " + textUsuario.Text)
-                        userLogueado.Text = textUsuario.Text
-                        LabelhheldNro.Text = textNroHandHeld.Text
+            If exists = True Then
 
 
 
-                        MenuPPal.Show()
-                    Else
-                        MessageBox.Show("usuario o clave incorrecta, pida el alta de usuario a su encargado.")
+                If textUsuario.TextLength = 0 Or textContrasenia.TextLength = 0 Or textNroHandHeld.TextLength = 0 Then
+
+                    MessageBox.Show("No se permiten campos vacíos, por favor complételos.")
+
+                Else
+                    If textNroHandHeld.TextLength > 0 And textNroHandHeld.TextLength < 3 Then
+
+
+
+
+                        If compararUsuarioValido(textUsuario.Text, textContrasenia.Text) = True Then
+
+
+                            MessageBox.Show("Bienvenido " + textUsuario.Text)
+                            userLogueado.Text = textUsuario.Text
+                            LabelhheldNro.Text = textNroHandHeld.Text
+
+
+
+                            MenuPPal.Show()
+                        Else
+                            MessageBox.Show("usuario o clave incorrecta, pida el alta de usuario a su encargado.")
+
+
+                        End If
+
+                    ElseIf textNroHandHeld.TextLength > 2 Then
+                        MessageBox.Show("Solo se permite nro hanheld hasta el 99 inclusive ")
+                        textNroHandHeld.Text = ""
+                        textNroHandHeld.BackColor = Color.Red
+
+
 
 
                     End If
-
-                ElseIf textNroHandHeld.TextLength > 2 Then
-                    MessageBox.Show("Solo se permite nro hanheld hasta el 99 inclusive ")
-                    textNroHandHeld.Text = ""
-                    textNroHandHeld.BackColor = Color.Red
-
 
 
 
                 End If
 
+            Else
+                MessageBox.Show("No hay usuarios cargados en el sistema ***INICIALICE USUARIOS***.")
 
 
             End If
-
-        Else
-            MessageBox.Show("No hay usuarios cargados en el sistema ***INICIALICE USUARIOS***.")
-
 
         End If
 
@@ -97,6 +119,8 @@ Public Class Login
 
 
     Private Sub salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles salir.Click
+
+
 
         Me.Close()
 
@@ -114,10 +138,10 @@ Public Class Login
 
     End Sub
 
-   
 
-   
-   
+
+
+
 
     Private Function compararUsuarioValido(ByVal usuario As String, ByVal password As String) As Boolean
         Dim concatenados = usuario + "," + password
@@ -237,10 +261,6 @@ Public Class Login
 
     End Function
 
-    
-
-
-   
 
 
 
@@ -256,8 +276,34 @@ Public Class Login
 
 
 
-   
+
+
+
+
+
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         MenuPPal.Show()
     End Sub
+
+    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+
+        Dim hora As String = Now.ToString("HH:mm")
+        MessageBox.Show(hora)
+
+
+    End Sub
+
+
+    Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        MessageBox.Show("***** TFHHELDCU *****" & vbNewLine & "Software de inventario y cambio de ubicación.", "Transportes Furlong S.A")
+
+
+    End Sub
+
+
+    
+  
+    
+   
 End Class

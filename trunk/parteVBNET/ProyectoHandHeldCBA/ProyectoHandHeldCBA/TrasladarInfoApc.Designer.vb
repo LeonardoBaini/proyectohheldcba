@@ -32,7 +32,7 @@ Partial Public Class TrasladarInfoApc
         'NombreDeLaPC
         '
         Me.NombreDeLaPC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.NombreDeLaPC.Location = New System.Drawing.Point(21, 40)
+        Me.NombreDeLaPC.Location = New System.Drawing.Point(21, 68)
         Me.NombreDeLaPC.Name = "NombreDeLaPC"
         Me.NombreDeLaPC.Size = New System.Drawing.Size(200, 21)
         Me.NombreDeLaPC.TabIndex = 0
@@ -40,7 +40,7 @@ Partial Public Class TrasladarInfoApc
         'nombrePC
         '
         Me.nombrePC.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.nombrePC.Location = New System.Drawing.Point(21, 17)
+        Me.nombrePC.Location = New System.Drawing.Point(21, 45)
         Me.nombrePC.Name = "nombrePC"
         Me.nombrePC.Size = New System.Drawing.Size(111, 20)
         Me.nombrePC.Text = "Nombre de la PC"
@@ -48,7 +48,7 @@ Partial Public Class TrasladarInfoApc
         'Carpeta
         '
         Me.Carpeta.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Carpeta.Location = New System.Drawing.Point(21, 76)
+        Me.Carpeta.Location = New System.Drawing.Point(21, 92)
         Me.Carpeta.Name = "Carpeta"
         Me.Carpeta.Size = New System.Drawing.Size(200, 20)
         Me.Carpeta.Text = "Nombre de la carpeta destino"
@@ -56,7 +56,7 @@ Partial Public Class TrasladarInfoApc
         'CarpetaDestino
         '
         Me.CarpetaDestino.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.CarpetaDestino.Location = New System.Drawing.Point(21, 99)
+        Me.CarpetaDestino.Location = New System.Drawing.Point(21, 115)
         Me.CarpetaDestino.Name = "CarpetaDestino"
         Me.CarpetaDestino.Size = New System.Drawing.Size(200, 21)
         Me.CarpetaDestino.TabIndex = 3
