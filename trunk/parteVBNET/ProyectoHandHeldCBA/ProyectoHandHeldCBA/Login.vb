@@ -2,17 +2,20 @@
 Imports System.ComponentModel
 
 Public Class Login
-  
+
+    Private Sub mostrarSplash()
+        Me.Visible = False
+
+        Dim splash As New Splash
+        splash.ShowDialog()
+        splash.Timer1.Enabled = False
+        Me.Visible = True
+    End Sub
+
 
 
     Private Sub Login_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        ' Me.Visible = False
 
-        ' Dim splash As New Splash
-        ' splash.ShowDialog()
-        ' splash.Timer1.Enabled = False
-
-        ' Me.Visible = True
 
 
         Dim exists As Boolean
@@ -302,8 +305,8 @@ Public Class Login
     End Sub
 
 
-    
-  
-    
-   
+
+
+
+
 End Class

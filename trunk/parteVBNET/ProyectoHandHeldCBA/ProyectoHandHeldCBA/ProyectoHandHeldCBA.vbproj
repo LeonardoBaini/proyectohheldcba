@@ -56,6 +56,7 @@
     <NoConfig>true</NoConfig>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.WindowsCE.Forms" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

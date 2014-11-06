@@ -386,7 +386,7 @@
         End If
     End Sub
 
-    Private Sub aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles aceptar.Click
+    Private Sub aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles aceptar.Click, aceptar.KeyPress
 
         guardar()
         partNumber.Focus()
@@ -476,4 +476,7 @@
 
 
 
+   
+   
+    
 End Class
