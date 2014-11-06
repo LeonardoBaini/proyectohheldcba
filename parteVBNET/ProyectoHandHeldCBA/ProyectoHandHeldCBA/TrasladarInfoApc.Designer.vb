@@ -27,28 +27,31 @@ Partial Public Class TrasladarInfoApc
         Me.Label1 = New System.Windows.Forms.Label
         Me.RutaCompletaInfo = New System.Windows.Forms.TextBox
         Me.Salir = New System.Windows.Forms.Button
+        Me.culecturas = New System.Windows.Forms.Label
+        Me.ButtonInventario = New System.Windows.Forms.Button
+        Me.Label2 = New System.Windows.Forms.Label
         Me.SuspendLayout()
         '
         'NombreDeLaPC
         '
         Me.NombreDeLaPC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.NombreDeLaPC.Location = New System.Drawing.Point(21, 68)
+        Me.NombreDeLaPC.Location = New System.Drawing.Point(12, 58)
         Me.NombreDeLaPC.Name = "NombreDeLaPC"
-        Me.NombreDeLaPC.Size = New System.Drawing.Size(200, 21)
+        Me.NombreDeLaPC.Size = New System.Drawing.Size(224, 21)
         Me.NombreDeLaPC.TabIndex = 0
         '
         'nombrePC
         '
         Me.nombrePC.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.nombrePC.Location = New System.Drawing.Point(21, 45)
+        Me.nombrePC.Location = New System.Drawing.Point(12, 35)
         Me.nombrePC.Name = "nombrePC"
-        Me.nombrePC.Size = New System.Drawing.Size(111, 20)
-        Me.nombrePC.Text = "Nombre de la PC"
+        Me.nombrePC.Size = New System.Drawing.Size(200, 20)
+        Me.nombrePC.Text = "Nombre de la PC o IP"
         '
         'Carpeta
         '
         Me.Carpeta.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Carpeta.Location = New System.Drawing.Point(21, 92)
+        Me.Carpeta.Location = New System.Drawing.Point(12, 92)
         Me.Carpeta.Name = "Carpeta"
         Me.Carpeta.Size = New System.Drawing.Size(200, 20)
         Me.Carpeta.Text = "Nombre de la carpeta destino"
@@ -56,44 +59,72 @@ Partial Public Class TrasladarInfoApc
         'CarpetaDestino
         '
         Me.CarpetaDestino.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.CarpetaDestino.Location = New System.Drawing.Point(21, 115)
+        Me.CarpetaDestino.Location = New System.Drawing.Point(12, 115)
         Me.CarpetaDestino.Name = "CarpetaDestino"
-        Me.CarpetaDestino.Size = New System.Drawing.Size(200, 21)
+        Me.CarpetaDestino.Size = New System.Drawing.Size(224, 21)
         Me.CarpetaDestino.TabIndex = 3
         Me.CarpetaDestino.Text = "TEMPBAJADAS"
         '
         'Trasladar
         '
-        Me.Trasladar.Location = New System.Drawing.Point(140, 220)
+        Me.Trasladar.BackColor = System.Drawing.Color.GreenYellow
+        Me.Trasladar.Location = New System.Drawing.Point(11, 219)
         Me.Trasladar.Name = "Trasladar"
-        Me.Trasladar.Size = New System.Drawing.Size(97, 33)
+        Me.Trasladar.Size = New System.Drawing.Size(97, 25)
         Me.Trasladar.TabIndex = 4
         Me.Trasladar.Text = "Trasladar a PC"
         '
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(23, 139)
+        Me.Label1.Location = New System.Drawing.Point(12, 148)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(132, 20)
         Me.Label1.Text = "Info ruta cargada"
         '
         'RutaCompletaInfo
         '
+        Me.RutaCompletaInfo.BackColor = System.Drawing.Color.Yellow
         Me.RutaCompletaInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.RutaCompletaInfo.Enabled = False
         Me.RutaCompletaInfo.Location = New System.Drawing.Point(11, 171)
         Me.RutaCompletaInfo.Name = "RutaCompletaInfo"
+        Me.RutaCompletaInfo.ReadOnly = True
         Me.RutaCompletaInfo.Size = New System.Drawing.Size(226, 21)
         Me.RutaCompletaInfo.TabIndex = 6
         '
         'Salir
         '
-        Me.Salir.Location = New System.Drawing.Point(14, 220)
+        Me.Salir.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Salir.Location = New System.Drawing.Point(12, 258)
         Me.Salir.Name = "Salir"
-        Me.Salir.Size = New System.Drawing.Size(89, 33)
+        Me.Salir.Size = New System.Drawing.Size(224, 24)
         Me.Salir.TabIndex = 10
-        Me.Salir.Text = "Salir"
+        Me.Salir.Text = "RETROCEDER"
+        '
+        'culecturas
+        '
+        Me.culecturas.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.culecturas.Location = New System.Drawing.Point(12, 201)
+        Me.culecturas.Name = "culecturas"
+        Me.culecturas.Size = New System.Drawing.Size(95, 18)
+        Me.culecturas.Text = "CULECTURAS"
+        '
+        'ButtonInventario
+        '
+        Me.ButtonInventario.BackColor = System.Drawing.Color.GreenYellow
+        Me.ButtonInventario.Location = New System.Drawing.Point(130, 219)
+        Me.ButtonInventario.Name = "ButtonInventario"
+        Me.ButtonInventario.Size = New System.Drawing.Size(106, 25)
+        Me.ButtonInventario.TabIndex = 15
+        Me.ButtonInventario.Text = "Trasladar a PC"
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.Location = New System.Drawing.Point(130, 201)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(106, 18)
+        Me.Label2.Text = "CUTOMINVEN"
         '
         'TrasladarInfoApc
         '
@@ -102,6 +133,9 @@ Partial Public Class TrasladarInfoApc
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(240, 294)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.ButtonInventario)
+        Me.Controls.Add(Me.culecturas)
         Me.Controls.Add(Me.Salir)
         Me.Controls.Add(Me.RutaCompletaInfo)
         Me.Controls.Add(Me.Label1)
@@ -123,4 +157,7 @@ Partial Public Class TrasladarInfoApc
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents RutaCompletaInfo As System.Windows.Forms.TextBox
     Friend WithEvents Salir As System.Windows.Forms.Button
+    Friend WithEvents culecturas As System.Windows.Forms.Label
+    Friend WithEvents ButtonInventario As System.Windows.Forms.Button
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class
